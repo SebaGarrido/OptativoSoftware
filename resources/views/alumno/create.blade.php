@@ -42,11 +42,11 @@
                     <label for="apellido">Apellido:</label>
                     <input type="text" name="apellido" placeholder="EJ: Laloca">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="genero">Género: </label>
                     <input type="radio" name="genero" value="1"> hombre
                     <input type="radio" name="genero" value="0"> mujer
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label for="edad">Edad: </label>
                     <input type="text" name="edad" style="width: 300px;" placeholder="Ej: 18">

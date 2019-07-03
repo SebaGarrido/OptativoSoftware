@@ -74,7 +74,7 @@ class ProfesorController extends Controller
 
         }
         
-
+ 
         //Revisamos que el registro no este duplicado
         
          $regitros = Profesor::where("idProfesor","=",$idProfesor)->count();

@@ -42,11 +42,11 @@
                 <label for="apellido">Apellido:</label>
                 <input type="text" name="apellido" placeholder="EJ: Laloca" value="{{$usuario->apellido}}">
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label for="genero" >Genero: </label>
                 <input type="radio" name="genero" value="hombre"> hombre
                 <input type="radio" name="genero" value="mujer"> mujer
-            </div>
+            </div>-->
             <div class="form-group">
                 <label for="edad">Edad: </label>
                 <input type="text" name="edad" style="width: 300px;" placeholder="Ej: 18" value="{{$usuario->edad}}">
