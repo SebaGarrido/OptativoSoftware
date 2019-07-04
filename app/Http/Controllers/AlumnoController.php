@@ -104,7 +104,16 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
 
     public function store(Request $request)
     {   
-        $idAlumno =$request->get('id');;
+        $idAlumno =$request->get('id');
+        $genero = $request->get('genero');
+
+        if($genero=='mujer'){
+            $generoA=0;
+        }
+        else{
+            $generoA =1;
+
+        }
 
            //Revisamos que el registro no este duplicado
            
@@ -122,7 +131,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
         $usuario->nombre=$request->get('nombre');
         $usuario->apellido=$request->get('apellido');
         $usuario->email=$request->get('email');
-        $usuario->genero=$request->get('genero');
+        $usuario->genero=$generoA;
         $usuario->edad=$request->get('edad');
         $usuario->rol= 'alumno';
         $usuario->estado= 'activo';
@@ -130,7 +139,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
   
         $alumno = new Alumno;
         $alumno->idAlumno = $request->get('id');
-        $alumno->asignacion='';
+        $alumno->asignacion='No asignado';
         $alumno->ingreso=$request->get('ingresoYear');
         $alumno->nombre=$request->get('nombre');
         $alumno->apellido=$request->get('apellido');
