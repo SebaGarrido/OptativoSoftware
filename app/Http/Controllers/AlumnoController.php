@@ -126,7 +126,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
         $usuario->edad=$request->get('edad');
         $usuario->rol= 'alumno';
         $usuario->estado= 'activo';
-        $usuario->save();   
+        $usuario->save();	
   
         $alumno = new Alumno;
         $alumno->idAlumno = $request->get('id');
@@ -143,7 +143,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
 
     public function show($id)
     {
-                 
+    	         
             $usuarios = DB::table('users as u')
             ->join ('Alumno as a', 'a.idAlumno', '=' , 'u.id')
             

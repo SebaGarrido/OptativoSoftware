@@ -5,6 +5,7 @@
 
     <div class="row">
         <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            
             <fieldset>
                 <legend><h3>Nuevo Profesor: </h3></legend>
                 @if(count($errors) > 0)
@@ -17,7 +18,7 @@
                 </div>
                 @endif
 
-                {!!Form::open(array('url'=>'profesor', 'method'=>'POST', 'autocomplete'=>'off'))!!}
+                {!!Form::open(array('url'=>'profesores', 'method'=>'POST', 'autocomplete'=>'off'))!!}
                 {{Form::token()}}
                 <div class="form-group">
                     <label for="id">RUT: </label>
@@ -27,7 +28,7 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña: </label> 
+                    <label for="password">Contraseña: </label>
                     <input type="password" name="password" placeholder="*************">
                 </div>
                 <div class="form-group">

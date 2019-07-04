@@ -1,11 +1,12 @@
 @extends ('menu.admin')
 @section ('contenido')
 
-    
+    {!!Html::style('admin/css/formulario.css')!!}
 
     <div class="row">
         <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-12">
-             
+            
+          
                 <legend><h3>Cursos </h3></legend>
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">

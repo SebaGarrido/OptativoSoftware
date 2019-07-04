@@ -109,6 +109,23 @@
 			</div>
 		</div>
 	</div>
+    <div id="next_button" align="center">
+					<button id="exportar" class="btn btn-success" align="right">Exportar</button>
+	</div>
+
     
+	@push('scripts')
+    <script type="text/javascript">
+		$(document).ready(function () {
+			$("#exportar").click(function(){
+			  $("#LibretaNotas").table2excel({
+				name: "Libreta",
+			    filename: "Libreta",
+				fileext: ".xlsx"
+			  }); 
+			});
+		});
+	</script>
+	@endpush
 
 @stop

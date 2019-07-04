@@ -24,7 +24,7 @@
 						<th>Nombre</th>
 						<th>Apellido</th>
 						<th>Correo</th>
-						
+						<th>Genero</th>
 						<th>Edad</th>
 						<th>Año de ingreso</th>
 						<th>Opciones</th>
@@ -35,7 +35,7 @@
 						<td>{{$usu -> nombre}}</td>
 						<td>{{$usu -> apellido}}</td>
 						<td>{{$usu -> email}}</td>
-						
+						<td>{{$usu -> genero}}</td>
 						<td>{{$usu -> edad}}</td>
 						<td>{{$usu -> ingreso}}</td>
 						<td>
