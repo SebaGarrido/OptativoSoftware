@@ -178,6 +178,9 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
 
     public function update(Request $request, $id)
     {
+
+
+
       $usuario = User::findOrFail($id);
       $usuario->id=$request->get('id');
       $usuario->digito=$request->get('digito');
@@ -185,7 +188,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
       $usuario->nombre=$request->get('nombre');
       $usuario->apellido=$request->get('apellido');
       $usuario->email=$request->get('email');
-      $usuario->genero=$request->get('genero');
+      //$usuario->genero=$request->get('genero');
       $usuario->edad=$request->get('edad');
       $usuario->rol= 'alumno';
       $usuario->update(); 
