@@ -9,7 +9,7 @@ use App\Http\Requests;
 use App\User;
 use App\Alumno;
 use App\Notas;
- 
+
 //use asistencias\Alumno;
 //hacemos referencias a redirect para hacer algunas redirrecciones
 use Illuminate\Support\Facades\Redirect;
@@ -51,7 +51,7 @@ class AlumnoController extends Controller
                     'u.nombre as nombre',
                     'u.apellido as apellido',
                     'u.email as email',
-                    //'u.genero as genero',
+                    'u.genero as genero',
                     'u.edad as edad',   
                     'a.ingreso as ingreso'
                     )
@@ -104,16 +104,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
 
     public function store(Request $request)
     {   
-        $idAlumno =$request->get('id');
-        $genero = $request->get('genero');
-
-        if($genero=='mujer'){
-            $generoA=0;
-        }
-        else{
-            $generoA=1;
-
-        }
+        $idAlumno =$request->get('id');;
 
            //Revisamos que el registro no este duplicado
            
@@ -131,11 +122,11 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
         $usuario->nombre=$request->get('nombre');
         $usuario->apellido=$request->get('apellido');
         $usuario->email=$request->get('email');
-        //$usuario->genero=$generoA;
+        $usuario->genero=$request->get('genero');
         $usuario->edad=$request->get('edad');
         $usuario->rol= 'alumno';
         $usuario->estado= 'activo';
-        $usuario->save();	
+        $usuario->save();   
   
         $alumno = new Alumno;
         $alumno->idAlumno = $request->get('id');
@@ -152,7 +143,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
 
     public function show($id)
     {
-    	         
+                 
             $usuarios = DB::table('users as u')
             ->join ('Alumno as a', 'a.idAlumno', '=' , 'u.id')
             
@@ -162,7 +153,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
                     'u.nombre as nombre',
                     'u.apellido as apellido',
                     'u.email as email',
-                    //'u.genero as genero',
+                    'u.genero as genero',
                     'u.edad as edad',   
                     'a.ingreso as ingreso'
                     )
@@ -185,7 +176,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
       $usuario->nombre=$request->get('nombre');
       $usuario->apellido=$request->get('apellido');
       $usuario->email=$request->get('email');
-      //$usuario->genero=$request->get('genero');
+      $usuario->genero=$request->get('genero');
       $usuario->edad=$request->get('edad');
       $usuario->rol= 'alumno';
       $usuario->update(); 
@@ -247,7 +238,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
             $pass=$request->get('pass');
             $nombre=$request->get('nombre');
             $apellido=$request->get('apellido');
-            //$genero=$request->get('genero');
+            $genero=$request->get('genero');
             $edad=$request->get('edad');
             $correo=$request->get('correo');
           
@@ -281,7 +272,7 @@ return view('listaAlumno.index', ["lista" => $lista,"curso" => $cursos ]);
                     $usuario->password = bcrypt($pass[$cont]);
                     $usuario->nombre = $nombre[$cont];
                     $usuario->apellido = $apellido[$cont];
-                    //$usuario->genero = $genero[$cont];
+                    $usuario->genero = $genero[$cont];
                     $usuario->edad = $edad[$cont];
                     $usuario->email = $correo[$cont];
                     $usuario->rol= 'alumno';
