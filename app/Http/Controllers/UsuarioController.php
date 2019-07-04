@@ -63,7 +63,7 @@ class UsuarioController extends Controller
                 ->join ('Curso as c', 'c.idCurso', '=' , 'm.idCurso')
                 ->where('m.idProfesor','=',$query)
                 ->where('m.estado','=','activo')
-                ->where('c.year','=',$year)            
+                //->where('c.year','=',$year)            
                 ->select('m.nombre','m.idMateria as idMateria')
                 ->paginate(50);
 
